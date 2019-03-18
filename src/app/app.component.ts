@@ -16,8 +16,7 @@ export class AppComponent implements OnInit {
   public isLoggedOut$: Observable<boolean>;
 
   constructor(
-    private store: Store<AppState>,
-    private router: Router
+    private store: Store<AppState>
   ) {
 
   }
@@ -28,7 +27,6 @@ export class AppComponent implements OnInit {
 
   logout() {
     this.store.dispatch(new Logout());
-    return this.router.navigateByUrl('');
   }
 
   private getIsUserLoggedInFlag() {
